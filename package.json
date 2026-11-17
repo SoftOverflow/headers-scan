@@ -1,0 +1,16 @@
+{
+  "name": "headers-scan",
+  "version": "1.0.0",
+  "description": "Scan a domain's HTTP security headers and grade it like securityheaders.com — from your terminal or CI.",
+  "type": "module",
+  "bin": {
+    "headers-scan": "./index.mjs"
+  },
+  "scripts": {
+    "scan": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
