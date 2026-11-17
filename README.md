@@ -34,7 +34,7 @@ node index.mjs example.com --min-grade B
 ## What's checked
 
 - `Strict-Transport-Security` (20 pts)
-- `Content-Security-Policy` (25 pts) — `frame-ancestors` counts for clickjacking
+- `Content-Security-Policy` (30 pts) — `frame-ancestors` counts for clickjacking
 - `X-Frame-Options` (15 pts)
 - `X-Content-Type-Options` (10 pts)
 - `Referrer-Policy` (10 pts)

@@ -12,7 +12,7 @@ const HEADERS = [
   {
     key: "content-security-policy",
     name: "Content-Security-Policy",
-    weight: 25,
+    weight: 30,
     hint: "start with Report-Only, then tighten sources",
   },
   {
