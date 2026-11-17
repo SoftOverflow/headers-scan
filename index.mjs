@@ -40,6 +40,13 @@ const HEADERS = [
     weight: 10,
     hint: 'e.g. "camera=(), microphone=(), geolocation=()"',
   },
+  {
+    key: "x-powered-by",
+    name: "No tech disclosure (X-Powered-By…)",
+    weight: 5,
+    hint: 'remove "X-Powered-By", "X-Generator", "X-AspNet-Version"',
+    invert: ["x-powered-by", "x-generator", "x-aspnet-version", "x-aspnetmvc-version"],
+  },
 ];
 
 const GRADES = [
@@ -78,7 +85,9 @@ async function main() {
 
   let score = 0;
   const results = HEADERS.map((h) => {
-    const present = headers[h.key] !== undefined || (h.alt ? h.alt(headers) : false);
+    const present = h.invert
+      ? h.invert.every((k) => headers[k] === undefined)
+      : headers[h.key] !== undefined || (h.alt ? h.alt(headers) : false);
     if (present) score += h.weight;
     return { header: h.name, present, weight: h.weight, hint: present ? null : h.hint, value: headers[h.key] ?? null };
   });

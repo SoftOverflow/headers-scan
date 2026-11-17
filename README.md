@@ -39,6 +39,7 @@ node index.mjs example.com --min-grade B
 - `X-Content-Type-Options` (10 pts)
 - `Referrer-Policy` (10 pts)
 - `Permissions-Policy` (10 pts)
+- No tech disclosure (`X-Powered-By`, `X-Generator`…) (5 pts)
 
 Zero dependencies. Node 18+.
 
